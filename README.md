@@ -50,11 +50,9 @@ pip install selenium beautifulsoup4 requests openai webdriver-manager
 
 4. Set up your OpenAI API key:
 ```bash
-# On Windows PowerShell
-$env:OPENAI_API_KEY="your-api-key-here"
+# On page.py upadte the code
+api_key = "your-api-key-here"
 
-# On Unix/MacOS
-export OPENAI_API_KEY="your-api-key-here"
 ```
 
 ## Usage
