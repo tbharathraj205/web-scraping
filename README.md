@@ -52,7 +52,6 @@ pip install selenium beautifulsoup4 requests openai webdriver-manager
 ```bash
 # On page.py upadte the code
 api_key = "your-api-key-here"
-
 ```
 
 ## Usage
