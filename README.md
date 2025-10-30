@@ -58,7 +58,7 @@ api_key = "your-api-key-here"
 
 1. Run the script:
 ```bash
-python web.py
+python web-scraper.py
 ```
 
 2. Enter your search query when prompted.
@@ -87,8 +87,8 @@ The results are saved in `articles.json` with the following structure:
 
 ## Files Description
 
-- `web.py`: Main script that handles web scraping and coordination
-- `page.py`: Handles AI summarization using OpenAI's API
+- `web-scraper.py`: Main script that handles web scraping and coordination
+- `openai_api.py`: Handles AI summarization using OpenAI's API
 - `articles.json`: Output file containing scraped data and summaries
 
 ## Error Handling
