@@ -11,7 +11,8 @@ import json
 import requests
 import signal
 import sys
-import page  # Direct import
+import openai_api as page
+ # Direct import
 
 # Global variable to store the WebDriver instance
 driver = None
