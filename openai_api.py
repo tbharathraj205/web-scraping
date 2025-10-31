@@ -23,7 +23,7 @@ def run_query(link):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant that summarizes web pages."},
+                {"role": "system", "content": "You are a helpful assistant that summarizes web pages.If you cant summarize send 404 Not Found"},
                 {"role": "user", "content": prompt}
             ],
             max_tokens=150  # Limit summary length
