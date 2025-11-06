@@ -1,121 +1,94 @@
-# Web Scraping with AI Summarization
+# Web Article Scraper & Summarizer
 
-This project is a web scraping tool that searches DuckDuckGo for a given query, scrapes the search results, and uses OpenAI's GPT-3.5 to generate summaries of the web pages.
+A script that searches the web, collects article links, extracts text, and summarizes the information using the OpenAI API. All results are saved into a structured JSON file.
 
-## Features
+## ✨ How It Works
 
-- Search DuckDuckGo for any query
-- Automated web scraping using Selenium and BeautifulSoup4
-- Page content extraction and storage
-- AI-powered summarization using OpenAI's GPT-3.5-turbo
-- Results saved in JSON format
-- Headless browser operation
-- Error handling and graceful termination
+You enter a search term.
 
-## Prerequisites
+The script finds related web pages (via DuckDuckGo).
 
-- Python 3.x
-- Google Chrome browser
-- OpenAI API key
+Text content is extracted from each page.
 
-## Required Python Packages
+AI generates a clear, short summary.
 
-- selenium
-- beautifulsoup4
-- requests
-- openai
-- webdriver-manager
+Everything is saved to articles.json.
 
-## Installation
+## 🚀 Features
 
-1. Clone the repository:
-```bash
-git clone https://github.com/tbharathraj205/web-scraping.git
-cd web-scraping
+Web search using DuckDuckGo (ddgs)
+
+Automatic webpage text extraction with BeautifulSoup
+
+AI summaries generated using OpenAI
+
+Avoids duplicates and skips unreadable pages
+
+Saves results in clean JSON format
+
+## 📂 Project Structure
+```
+project-folder/
+│
+├── main.py           # Orchestrates search + scraping + summarization
+├── summarize.py      # Handles text extraction + OpenAI summary generation
+└── articles.json     # Output file created after running the script
+```
+🔧 Installation
+
+Install required dependencies:
+
+pip install ddgs requests beautifulsoup4 openai
+
+## 🔑 API Key Setup
+
+Open summarize.py and set your OpenAI API key:
+```
+openai.api_key = "your_api_key_here"
+```
+## ▶️ Usage
+
+Run the script:
+```
+python main.py
 ```
 
-2. Create and activate a virtual environment:
-```bash
-python -m venv .venv
-# On Windows
-.venv\Scripts\activate
-# On Unix/MacOS
-source .venv/bin/activate
+You'll be prompted for:
+```
+Enter your search query:
+How many results? (default 10):
 ```
 
-3. Install required packages:
-```bash
-pip install selenium beautifulsoup4 requests openai webdriver-manager
+Example:
+
+Enter your search query: climate change news
+How many results? (default 10): 5
+
+
+### The script will then:
+
+Search DuckDuckGo
+
+Extract article text
+
+Summarize each article
+
+Save everything into summarize.json
+
+📝 Output Example (summarize.json)
 ```
-
-4. Set up your OpenAI API key:
-```bash
-# On openai_api.py upadte the code
-api_key = "your-api-key-here"
-```
-
-## Usage
-
-1. Run the script:
-```bash
-python web-scraper.py
-```
-
-2. Enter your search query when prompted.
-
-3. The program will:
-	 - Search DuckDuckGo for your query
-	 - Extract relevant links
-	 - Visit each webpage
-	 - Extract the content
-	 - Generate an AI summary
-	 - Save everything to `articles.json`
-
-## Output Format
-
-The results are saved in `articles.json` with the following structure:
-```json
 [
-	{
-		"url": "https://example.com",
-		"status": 200,
-		"content": "HTML content of the page",
-		"summary": "AI-generated summary of the page"
-	}
+  {
+    "url": "https://example.com/article",
+    "status": 200,
+    "summary": "This article discusses the impact of climate change..."
+  }
 ]
 ```
 
-## Files Description
+## ⚠ Notes
 
-- `web-scraper.py`: Main script that handles web scraping and coordination
-- `openai_api.py`: Handles AI summarization using OpenAI's API
-- `articles.json`: Output file containing scraped data and summaries
+Some websites may block scraping or have unreadable content — these are automatically skipped.
 
-## Error Handling
+Default summarization model is gpt-3.5-turbo. You can change the model in summarize.py.
 
-The program includes error handling for:
-- Network issues
-- Invalid URLs
-- Missing API keys
-- Page load timeouts
-- Scraping failures
-- API rate limits
-
-## Important Notes
-
-- Respect websites' robots.txt and terms of service
-- Be mindful of rate limits for both web scraping and API calls
-- Keep your API keys secure and never commit them to source control
-- The program uses a headless browser to minimize resource usage
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Security
-
-Never share or commit your API keys. Always use environment variables for sensitive data.
