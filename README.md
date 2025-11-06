@@ -4,27 +4,27 @@ A script that searches the web, collects article links, extracts text, and summa
 
 ## ✨ How It Works
 
-You enter a search term.
+1. You enter a search term.
 
-The script finds related web pages (via DuckDuckGo).
+2. The script finds related web pages (via DuckDuckGo).
 
-Text content is extracted from each page.
+3. Text content is extracted from each page.
 
-AI generates a clear, short summary.
+4. AI generates a clear, short summary.
 
-Everything is saved to articles.json.
+5. Everything is saved to articles.json.
 
 ## 🚀 Features
 
-Web search using DuckDuckGo (ddgs)
+- Web search using DuckDuckGo (ddgs)
 
-Automatic webpage text extraction with BeautifulSoup
+- Automatic webpage text extraction with BeautifulSoup
 
-AI summaries generated using OpenAI
+- AI summaries generated using OpenAI
 
-Avoids duplicates and skips unreadable pages
+- Avoids duplicates and skips unreadable pages
 
-Saves results in clean JSON format
+- Saves results in clean JSON format
 
 ## 📂 Project Structure
 ```
@@ -38,13 +38,16 @@ project-folder/
 
 Install required dependencies:
 
+```
 pip install ddgs requests beautifulsoup4 openai
+```
 
-## 🔑 API Key Setup
+### 🔑 API Key Setup
 
 Open summarize.py and set your OpenAI API key:
 ```
 openai.api_key = "your_api_key_here"
+
 ```
 ## ▶️ Usage
 
@@ -60,20 +63,20 @@ How many results? (default 10):
 ```
 
 Example:
-
+```
 Enter your search query: climate change news
 How many results? (default 10): 5
 
+```
+The script will then:
 
-### The script will then:
+- Search DuckDuckGo
 
-Search DuckDuckGo
+- Extract article text
 
-Extract article text
+- Summarize each article
 
-Summarize each article
-
-Save everything into summarize.json
+- Save everything into summarize.json
 
 📝 Output Example (summarize.json)
 ```
