@@ -13,6 +13,6 @@ def check_key(key):
         raise HTTPException(status_code=401, detail="Invalid API key")
 
 @app.get("/search")
-def api_search(query: str, max_results: int = 5, x-api-key: str = Header(None)):
-    check_key(x-api-key)
+def api_search(query: str, max_results: int = 5, key: str = Header(None)):
+    check_key(key)
     return run_scrape(query, max_results)
