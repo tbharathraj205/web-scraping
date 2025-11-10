@@ -1,4 +1,4 @@
-  # FastAPI Scraper - Web Search & Summarization API
+  # Web Scraper - Web Search & Summarization API
 
 A lightweight FastAPI-based web scraping and summarization service that searches DuckDuckGo and generates intelligent summaries of web pages. Designed for containerized deployment with Docker.
 
@@ -55,13 +55,13 @@ cd fastapi-scraper
 ### 2. Build the Docker Image
 
 ```bash
-docker build --no-cache -t fastapi-scraper:latest .
+docker build --no-cache -t web-scraper:latest .
 ```
 
 ### 3. Run the Container
 
 ```bash
-docker run --rm -p 8000:8000 fastapi-scraper:latest
+docker run --rm -p 8000:8000 web-scraper:latest
 ```
 
 ### 4. Test the API
